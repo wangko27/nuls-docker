@@ -1,4 +1,4 @@
-FROM registry.baota.io/frolvlad/alpine-oraclejdk8:8.181.13-full
+FROM frolvlad/alpine-oraclejdk8:8.181.13-full
 
 MAINTAINER  wangkun23 <845885222@qq.com>
 # Default to UTF-8 file.encoding
