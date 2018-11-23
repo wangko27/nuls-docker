@@ -1,0 +1,43 @@
+stages:
+- build
+- deploy
+
+services:
+  - docker:dind
+
+cache:
+  paths:
+  - .m2/repository
+  
+variables:
+  PUSH_REGISTRY: docker.baota.io
+  PULL_REGISTRY: registry.baota.io
+  PUSH_DOCKER_IAMGE: $PUSH_REGISTRY/wallet/wallet-dev:$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID-$CI_COMMIT_SHA
+  PULL_DOCKER_IAMGE: $PULL_REGISTRY/wallet/wallet-dev:$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID-$CI_COMMIT_SHA
+  DOCKER_USRE: admin
+  DOCKER_PASSWORD: admin123
+ 
+
+build:docker:
+  stage: build
+  image: registry.baota.io/docker:18.09
+  before_script:
+  - docker login -u $DOCKER_USRE -p $DOCKER_PASSWORD $PUSH_REGISTRY
+  script:
+  - docker build -t $PUSH_DOCKER_IAMGE .
+  - docker push $PUSH_DOCKER_IAMGE
+  dependencies: []
+  only:
+  - master
+
+    
+deploy:kubernetes:
+  stage: deploy
+  image: registry.baota.io/kubectl:v1.12.2
+  script:
+    - echo $PULL_DOCKER_IAMGE
+    - kubectl --namespace kube-system set image deployment/app-nuls-wallet app-nuls-wallet=$PULL_DOCKER_IAMGE
+  dependencies: []
+  only:
+    - never
+    
