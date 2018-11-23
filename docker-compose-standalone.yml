@@ -1,0 +1,11 @@
+version: '3'
+services:
+  nuls-wallet:
+    build: .
+    ports:
+    - 127.0.0.1:8001:8001
+    - 8003:8003
+    volumes:
+    - "./modules.ini:/nuls/conf/modules.ini"
+    - "./standalone/data:/nuls/data"
+    - "./standalone/logs:/nuls/logs"

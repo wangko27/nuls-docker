@@ -7,7 +7,6 @@ ENV LANG C.UTF-8
 WORKDIR /
 
 ADD nuls-node_1122_v33.tar.gz /nuls
-ADD modules.ini /nuls/conf/modules.ini
 ADD start.sh /nuls/bin/start.sh
 RUN chmod +x /nuls/bin/start.sh
 

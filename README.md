@@ -15,6 +15,9 @@ docker-compose up
 ## test account
 > import flow address to seed wallet
 ```shell
+address: Nsdv1Hbu4TokdgbXreypXmVttYKdPT1g
+privateKey: 00ef8a6f90d707ab345740f0fab2d9f606165209ce41a71199f679f5dfd20bfd1d
+
 address: Nse9XfuzZQn7jofrV5uABiNLQwFadV2K
 privateKey: 023b14b5b35cb1fdb67d9235bc7a901568a0d30578830163ae9a9b090246e9c7
 

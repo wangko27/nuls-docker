@@ -1,0 +1,45 @@
+version: '3'
+services:
+  nuls-wallet-node1:
+    build: .
+    ports:
+    - 8001:8001
+    networks:
+      overlay:
+        ipv4_address: 172.16.0.1
+    volumes:
+    - "./modules.ini:/nuls/conf/modules.ini"
+    - "./node3/data:/nuls/data"
+    - "./node3/logs:/nuls/logs"
+
+  nuls-wallet-node2:
+    build: .
+    ports:
+    - 8012:8001
+    networks:
+      overlay:
+        ipv4_address: 172.16.0.2
+    volumes:
+      - "./modules.ini:/nuls/conf/modules.ini"
+      - "./node1/data:/nuls/data"
+      - "./node1/logs:/nuls/logs"
+
+  nuls-wallet-node3:
+    build: .
+    ports:
+    - 8013:8001
+    networks:
+      overlay:
+        ipv4_address: 172.16.0.3
+    volumes:
+    - "./modules.ini:/nuls/conf/modules.ini"
+    - "./node2/data:/nuls/data"
+    - "./node2/logs:/nuls/logs"
+
+networks:
+  overlay:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.0.0/24
