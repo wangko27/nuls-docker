@@ -48,6 +48,18 @@ services:
     - "./node4/data:/nuls/data"
     - "./node4/logs:/nuls/logs"
 
+  nuls-wallet-node5:
+    build: .
+    ports:
+    - 8015:8001
+    networks:
+      overlay:
+        ipv4_address: 172.16.0.15
+    volumes:
+    - "./modules.ini:/nuls/conf/modules.ini"
+    - "./node5/data:/nuls/data"
+    - "./node5/logs:/nuls/logs"
+
 networks:
   overlay:
     driver: bridge
