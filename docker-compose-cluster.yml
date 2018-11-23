@@ -6,7 +6,7 @@ services:
     - 8001:8001
     networks:
       overlay:
-        ipv4_address: 172.16.0.1
+        ipv4_address: 172.16.0.11
     volumes:
     - "./modules.ini:/nuls/conf/modules.ini"
     - "./node3/data:/nuls/data"
@@ -18,7 +18,7 @@ services:
     - 8012:8001
     networks:
       overlay:
-        ipv4_address: 172.16.0.2
+        ipv4_address: 172.16.0.12
     volumes:
       - "./modules.ini:/nuls/conf/modules.ini"
       - "./node1/data:/nuls/data"
@@ -30,11 +30,23 @@ services:
     - 8013:8001
     networks:
       overlay:
-        ipv4_address: 172.16.0.3
+        ipv4_address: 172.16.0.13
     volumes:
     - "./modules.ini:/nuls/conf/modules.ini"
     - "./node2/data:/nuls/data"
     - "./node2/logs:/nuls/logs"
+
+  nuls-wallet-node4:
+    build: .
+    ports:
+    - 8014:8001
+    networks:
+      overlay:
+        ipv4_address: 172.16.0.14
+    volumes:
+    - "./modules.ini:/nuls/conf/modules.ini"
+    - "./node4/data:/nuls/data"
+    - "./node4/logs:/nuls/logs"
 
 networks:
   overlay:
