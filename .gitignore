@@ -94,5 +94,6 @@ target/
 # virtualenv
 venv/
 ENV/
-/data
-/logs
+/node1
+/node2
+/node3
