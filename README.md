@@ -6,28 +6,48 @@
 > so that you can quickly understand nuls, test the functions of nuls, 
 > have enough nuls coins to run smart contracts and so on.
 
-## 1 install docker-compose
+# pre requirements
+## 1 install docker-ce(18.06.1-ce)
+```shell
+CentOS 7 (使用yum进行安装)
+# step 1: 安装必要的一些系统工具
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+# Step 2: 添加软件源信息
+sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+# Step 3: 更新并安装Docker-CE
+sudo yum makecache fast
+sudo yum -y install docker-ce
+# Step 4: 开启Docker服务
+sudo service docker start
+```
+## 2 install docker-compose
 ```shell
 curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ```
-## 2 how to run nuls wallet client
-#### 2.1 nuls private net cluster(4 nodes) mode
+# Quick Start
+## 1 how to run nuls wallet client
+#### 1.1 nuls private net cluster(4 nodes) mode
 ```shell
 docker-compose -f docker-compose-cluster.yml up
 # docker-compose up -d  # -d damon process run
 ```
-#### 2.2 nuls private net standalone mode
+#### 1.2 nuls private net standalone mode
 ```shell
  docker-compose -f docker-compose-standalone.yml up
 ```
 
-## 3 view the node log info
+## 2 view the node log info
 ```shell
  docker-compose -f docker-compose-cluster.yml logs -f nuls-wallet-node1
 ```
 
-## 4 test account
+## 3 connect to container
+```shell
+docker-compose -f docker-compose-cluster.yml exec nuls-wallet-node1 sh
+```
+
+## 3 test account
 > import flow address to seed wallet
 ```shell
 address: Nsdv1Hbu4TokdgbXreypXmVttYKdPT1g
