@@ -1,4 +1,4 @@
-# nuls docker images for develop
+# Nuls Docker compose for develop Nuls private net
 > if you read the docs.then you love nuls project,
 
 ## nuls docker description
@@ -6,7 +6,7 @@
 > so that you can quickly understand nuls, test the functions of nuls, 
 > have enough nuls coins to run smart contracts and so on.
 
-# pre requirements
+# Pre Requirements
 ## 1 install docker-ce(18.06.1-ce)
 ```shell
 CentOS 7 (使用yum进行安装)
