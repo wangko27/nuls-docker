@@ -1,18 +1,28 @@
 # nuls docker images for develop
 > 自定义docker镜像.方便ci cd使用
 
-## install docker-compose
+## 1 install docker-compose
 ```shell
 curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ```
-## how to run nuls wallet client
+## 2 how to run nuls wallet client
+#### 2.1 nuls private net cluster(4 nodes) mode
 ```shell
-docker-compose up
+docker-compose -f docker-compose-cluster.yml up
 # docker-compose up -d  # -d damon process run
 ```
+#### 2.2 nuls private net standalone mode
+```shell
+ docker-compose -f docker-compose-standalone.yml up
+```
 
-## test account
+## 3 view the node log info
+```shell
+ docker-compose -f docker-compose-cluster.yml logs -f nuls-wallet-node1
+```
+
+## 4 test account
 > import flow address to seed wallet
 ```shell
 address: Nsdv1Hbu4TokdgbXreypXmVttYKdPT1g
