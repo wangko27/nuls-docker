@@ -1,5 +1,10 @@
 # nuls docker images for develop
-> 自定义docker镜像.方便ci cd使用
+> if you read the docs.then you love nuls project,
+
+## nuls docker description
+> You can use this project to build a nuls private test network,
+> so that you can quickly understand nuls, test the functions of nuls, 
+> have enough nuls coins to run smart contracts and so on.
 
 ## 1 install docker-compose
 ```shell
