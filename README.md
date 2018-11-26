@@ -48,7 +48,7 @@ docker-compose -f docker-compose-cluster.yml exec nuls-wallet-node1 sh
 ```
 
 ## 3 test account
-#### [](http://hostIP:8001/#/wallet)
+#### access http://hostIP:8001/#/wallet
 
 > import flow address to seed wallet
 ```shell
