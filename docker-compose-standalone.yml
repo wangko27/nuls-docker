@@ -6,6 +6,7 @@ services:
     - 127.0.0.1:8001:8001
     - 8003:8003
     volumes:
-    - "./modules.ini:/nuls/conf/modules.ini"
     - "./standalone/data:/nuls/data"
     - "./standalone/logs:/nuls/logs"
+    - "./conf/modules.ini:/nuls/conf/modules.ini"
+    - "./conf/block/genesis-block.json:/nuls/conf/block/genesis-block.json"
