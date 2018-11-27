@@ -9,4 +9,5 @@ services:
     - "./standalone/data:/nuls/data"
     - "./standalone/logs:/nuls/logs"
     - "./conf/modules.ini:/nuls/conf/modules.ini"
+    - "./conf/nuls-version.xml:/nuls/conf/nuls-version.xml"
     - "./conf/block/genesis-block.json:/nuls/conf/block/genesis-block.json"

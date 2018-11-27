@@ -1,6 +1,8 @@
 # Nuls Docker compose for develop Nuls private net
 > if you read the docs.then you love nuls project,
 
+> nuls verison 1.1.4
+
 ## nuls docker description
 > You can use this project to build a nuls private test network,
 > so that you can quickly understand nuls, test the functions of nuls, 

@@ -11,6 +11,7 @@ services:
     - "./private/node1/data:/nuls/data"
     - "./private/node1/logs:/nuls/logs"
     - "./conf/modules.ini:/nuls/conf/modules.ini"
+    - "./conf/nuls-version.xml:/nuls/conf/nuls-version.xml"
     - "./conf/block/genesis-block.json:/nuls/conf/block/genesis-block.json"
 
   nuls-wallet-node2:
@@ -24,6 +25,7 @@ services:
     - "./private/node2/data:/nuls/data"
     - "./private/node2/logs:/nuls/logs"
     - "./conf/modules.ini:/nuls/conf/modules.ini"
+    - "./conf/nuls-version.xml:/nuls/conf/nuls-version.xml"
     - "./conf/block/genesis-block.json:/nuls/conf/block/genesis-block.json"
 
   nuls-wallet-node3:
@@ -37,6 +39,7 @@ services:
     - "./private/node3/data:/nuls/data"
     - "./private/node3/logs:/nuls/logs"
     - "./conf/modules.ini:/nuls/conf/modules.ini"
+    - "./conf/nuls-version.xml:/nuls/conf/nuls-version.xml"
     - "./conf/block/genesis-block.json:/nuls/conf/block/genesis-block.json"
 
   nuls-wallet-node4:
@@ -50,6 +53,7 @@ services:
     - "./private/node4/data:/nuls/data"
     - "./private/node4/logs:/nuls/logs"
     - "./conf/modules.ini:/nuls/conf/modules.ini"
+    - "./conf/nuls-version.xml:/nuls/conf/nuls-version.xml"
     - "./conf/block/genesis-block.json:/nuls/conf/block/genesis-block.json"
 
 networks:
