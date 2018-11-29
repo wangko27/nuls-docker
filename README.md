@@ -49,7 +49,7 @@ docker-compose -f docker-compose-cluster.yml up
 docker-compose -f docker-compose-cluster.yml exec nuls-wallet-node1 sh
 ```
 
-## 3 test accounts
+## 3 Test Accounts
 #### node1: http://hostIP:8001/#/wallet
 #### node2: http://hostIP:8012/#/wallet
 #### node3: http://hostIP:8013/#/wallet
