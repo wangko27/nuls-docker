@@ -1,4 +1,4 @@
-# Nuls Docker compose for develop Nuls private net
+# Nuls docker-compose for develop Private net
 > if you read the docs.then you love nuls project,
 
 > nuls verison 1.1.4
